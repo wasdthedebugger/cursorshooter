@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GUN GAME</title>
+</head>
+
+<body>
+    <div id="mainmenu">
+        <button onclick="startcount()">START GAME</button>
+    </div>
+    <div id="restart">
+
+    </div>
+    <div class="score">0</div>
+    <div id="countdown">0</div>
+    <div class="target">
+
+        <div id="one" onclick="hiddenDiv(this)">
+            <img src="target.png" alt="" srcset="">
+        </div>
+
+        <div id="two" onclick="hiddenDiv(this)">
+            <img src="target.png" alt="" srcset="">
+        </div>
+
+        <div id="three" onclick="hiddenDiv(this)">
+            <img src="target.png" alt="" srcset="">
+        </div>
+
+        <div id="four" onclick="hiddenDiv(this)">
+            <img src="target.png" alt="" srcset="">
+        </div>
+
+        <div id="five" onclick="hiddenDiv(this)">
+            <img src="target.png" alt="" srcset="">
+        </div>
+
+        <div id="six" onclick="hiddenDiv(this)">
+            <img src="target.png" alt="" srcset="">
+        </div>
+
+        <div id="seven" onclick="hiddenDiv(this)">
+            <img src="target.png" alt="" srcset="">
+        </div>
+
+        <div id="eight" onclick="hiddenDiv(this)">
+            <img src="target.png" alt="" srcset="">
+        </div>
+
+        <div id="nine" onclick="hiddenDiv(this)">
+            <img src="target.png" alt="" srcset="">
+        </div>
+
+    </div>
+    <div class="gunarea">
+        <img src="gun.png" alt="" class="gun">
+    </div>
+</body>
+<script>
+    var score = 0;
+    var audio = new Audio("shoot.wav");
+
+    function startcount() {
+        RandomDiv();
+        document.getElementById("mainmenu").style.display = "none";
+        var timeleft = 10;
+        var downloadTimer = setInterval(function () {
+            if (timeleft <= 0) {
+                clearInterval(downloadTimer);
+                document.getElementById("countdown").innerHTML = "Game Over";
+                document.getElementById("restart").innerHTML = "YOUR SCORE IS " + parseInt(document.getElementsByClassName("score")[0].innerHTML) + "<br><br>" + "<button onclick='window.location.reload()'>PLAY AGAIN</button>";
+                document.getElementById("restart").style.display = "block";
+            } else {
+                document.getElementById("countdown").innerHTML = timeleft;
+            }
+            timeleft -= 1;
+        }, 1000);
+    }
+    var score;
+
+    const gun = document.querySelector('.gun');
+    window.addEventListener('click', () => {
+        gun.classList.toggle('active');
+        audio.play();
+        setTimeout(() => {
+            gun.classList.toggle('active');
+        }, 200);
+    });
+
+    function RandomDiv() {
+        var myarray = new Array("one", "two", "three", "four", "five", "six", "seven", "eight", "nine");
+        var ChosenDiv = myarray[Math.floor(Math.random() * myarray.length)];
+        document.getElementById(ChosenDiv).style.visibility = "visible";
+    }
+    function hiddenDiv(target) {
+        setTimeout(() => {
+            document.getElementsByClassName("score")[0].innerHTML = parseInt(document.getElementsByClassName("score")[0].innerHTML) + 234;
+            target.style.visibility = "hidden";
+            RandomDiv();
+        }, 200);
+        document.getElementById(target.id).style.visibility = "hidden";
+    }
+
+</script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
+</script>
+
+</html>

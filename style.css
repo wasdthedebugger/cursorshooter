@@ -1,0 +1,127 @@
+* {
+    box-sizing: border-box;
+    cursor: url("arrow.cur"), default;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    background-color: skyblue;
+}
+
+.gun {
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    height: 336px;
+}
+
+.active {
+    animation: gun 0.2s linear;
+}
+
+@keyframes gun {
+    50% {
+        transform: translateY(50px);
+    }
+}
+
+.gunarea {
+    height: 500px;
+    background-color: red;
+    background-color: green;
+}
+
+.target {
+    margin: auto;
+    width: 70%;
+    height: 500px;
+    background-color: skyblue;
+    border-bottom-left-radius: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 999;
+}
+
+.target img {
+    transition: 0.1s linear;
+}
+
+#one {
+    visibility: hidden;
+}
+
+#two {
+    visibility: hidden;
+}
+
+#three {
+    visibility: hidden;
+}
+
+#four {
+    visibility: hidden;
+}
+
+#five {
+    visibility: hidden;
+}
+
+#six {
+    visibility: hidden;
+}
+
+#seven {
+    visibility: hidden;
+}
+
+#eight {
+    visibility: hidden;
+}
+
+#nine {
+    visibility: hidden;
+}
+
+.score {
+    top: 0;
+    left: 0;
+    position: absolute;
+    background-color: brown;
+    padding: 20px;
+    color: white;
+}
+
+#countdown {
+    top: 0;
+    right: 0;
+    position: absolute;
+    background-color: brown;
+    padding: 20px;
+    color: white;
+}
+
+#mainmenu {
+    width: 100%;
+    display: block;
+    background-color: brown;
+    padding: 50px;
+    text-align: center;
+    top: 41%;
+    position: absolute;
+    z-index: 999;
+}
+
+#restart {
+    width: 100%;
+    display: none;
+    background-color: brown;
+    padding: 50px;
+    text-align: center;
+    top: 41%;
+    position: absolute;
+    z-index: 999;
+    color: white;
+}
