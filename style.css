@@ -14,7 +14,7 @@ body {
     bottom: 0;
     right: 0;
     position: absolute;
-    height: 336px;
+    height: 200px;
 }
 
 .active {
@@ -35,13 +35,11 @@ body {
 
 .target {
     margin: auto;
-    width: 70%;
+    width: 80%;
     height: 500px;
-    background-color: skyblue;
-    border-bottom-left-radius: 200px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     z-index: 999;
 }
 
@@ -124,4 +122,8 @@ body {
     position: absolute;
     z-index: 999;
     color: white;
+}
+
+.devname {
+    margin-top: 20px;
 }
