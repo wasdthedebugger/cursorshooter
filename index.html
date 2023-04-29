@@ -12,15 +12,15 @@
     <link rel="apple-touch-icon" href="192.png">
     <meta property="og:title" content="CURSOR SHOOTER">
     <meta property="og:image" content="preview.JPG">
-    <meta name="description" content="Cursor Shooter is a simple shooting game made by Nikas Ghimire using JS. Let your cursor take control, hit the targets and get the high score.e">
-    <title>Cursor Shooter - Nikas Ghimire</title>
+    <meta name="description"
+        content="Cursor Shooter is a simple shooting game made by Nikas Ghimire using JS. Let your cursor take control, hit the targets and get the high score.">
+    <title>Cursor Shooter</title>
+
 </head>
 
 <body onmousedown="return false" onselectstart="return false">
     <div id="mainmenu">
-        <button onclick="startcount()">START GAME</button>
-        <br>
-        <div class="devname">NIKAS GHIMIRE</div>
+        <button onclick="startcount()">Start Game</button>
     </div>
     <div id="restart">
 
@@ -72,9 +72,11 @@
 </body>
 <script>
 
-  if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-    window.location = "sorry.html";
-  }
+    console.log("Developed by Nikas Ghimire [https://nikas.com.np]")
+
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        window.location = "sorry.html";
+    }
 
     var score = 0;
     var audio = new Audio("shoot.wav");
@@ -86,8 +88,8 @@
         var downloadTimer = setInterval(function () {
             if (timeleft <= 0) {
                 clearInterval(downloadTimer);
-                document.getElementById("countdown").innerHTML = "GAME OVER";
-                document.getElementById("restart").innerHTML = "YOUR SCORE IS " + parseInt(document.getElementsByClassName("score")[0].innerHTML) + "<br><br>" + "<button onclick='window.location.reload()'>PLAY AGAIN</button>";
+                document.getElementById("countdown").innerHTML = "Time Up";
+                document.getElementById("restart").innerHTML = "Your Score is " + parseInt(document.getElementsByClassName("score")[0].innerHTML) + "<br><br>" + "<button onclick='window.location.reload()'>Play Again</button>";
                 document.getElementById("restart").style.display = "block";
             } else {
                 document.getElementById("countdown").innerHTML = timeleft;
@@ -111,6 +113,7 @@
         var ChosenDiv = myarray[Math.floor(Math.random() * myarray.length)];
         document.getElementById(ChosenDiv).style.visibility = "visible";
     }
+
     function hiddenDiv(target) {
         setTimeout(() => {
             document.getElementsByClassName("score")[0].innerHTML = parseInt(document.getElementsByClassName("score")[0].innerHTML) + 234;
@@ -125,6 +128,6 @@
 </script>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"
     integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
-</script>
+    </script>
 
 </html>

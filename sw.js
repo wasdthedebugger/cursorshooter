@@ -4,7 +4,7 @@ self.addEventListener("install", e => {
             return cache.addAll(['./']);
         })
     );
-    console.log("Installed");
+    // console.log("Installed");
 });
 
 self.addEventListener("fetch", e => {
